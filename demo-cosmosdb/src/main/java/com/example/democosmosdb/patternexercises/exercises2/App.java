@@ -16,6 +16,7 @@ public class App {
         sendNotification.sent("UNI");
         System.out.println(sendNotification.getPrice());
         System.out.println();
+
         SendNotification sendNotification1 =  new Email(new Sms(new Slack(new EmptyNotifier())));
         sendNotification1.sent("SOAINT");
         System.out.println(sendNotification1.getPrice());
