@@ -21,6 +21,15 @@ public class ItemRegistry {
                 .packagingType("Can")
                 .build();
 
+        Contractor contractor = new Contractor.Builder()
+                                    .name("Paul")
+                                    .lastName("Saire")
+                                    .ega(27)
+                                    .gender("M")
+                                    .email("embre73@gmail.com")
+                                            .build();
+        System.out.println(contractor);
+
         addToItemRegistry(item11);
         addToItemRegistry(item22);
     }

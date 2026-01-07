@@ -9,7 +9,8 @@ public class DataProcessor {
         this.filterStrategy = filterStrategy;
     }
 
-    public List<Integer> getFilter(List<Integer> data) {
+    public List<Integer>
+    getFilter(List<Integer> data) {
         return filterStrategy.getfilter(data);
     }
 }

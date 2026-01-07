@@ -38,8 +38,8 @@ public class ReactorOperationsApplications implements CommandLineRunner {
         Flux<String> datosExistentes = Flux.just("Dato3", "Dato4");
         Mono<String> restaurarDatos = Mono.just("Restaurando datos...");
         restaurarDatos
-                .thenMany(datosExistentes); // thenMany se usa para ignorar el resultado de datosExistentes obviando lo que emite y continuar con restaurarDatos
-                //.subscribe(System.out::println);
+                .thenMany(datosExistentes); // thenMany se usa para ignorar el resultado de restaurarDatos obviando lo que emite y continuar con datosExistentes
+                //subscribe(System.out::println);
 
         // Ejemplo de uso de delayUntil
 
@@ -49,7 +49,7 @@ public class ReactorOperationsApplications implements CommandLineRunner {
         datos
                 .delayUntil(s -> tareaLarga)
                 .flatMap(s -> Mono.just(s)); // este aplana los monos a un Flux que es el Flux original de datos
-                //.subscribe(System.out::println);
+                //subscribe(System.out::println);
 
         datos
                 .delayUntil(s -> tareaLarga)
@@ -63,9 +63,9 @@ public class ReactorOperationsApplications implements CommandLineRunner {
 
         //use del .filterWhen para validar datos
         Flux<String> datosConValidacion = Flux.just("Dato7", "Dato8", "Dato9", "");
-        /*datosConValidacion
-                .filter(s -> !s.isEmpty() && s != null)
-                        .subscribe(System.out::println);*/ //imprime los mismo que abajo
+        datosConValidacion
+                .filter(s -> !s.isEmpty() && s != null);
+                        //.subscribe(System.out::println); //imprime los mismo que abajo
 
         datosConValidacion
                 .filterWhen(this::valdateData);
@@ -78,6 +78,8 @@ public class ReactorOperationsApplications implements CommandLineRunner {
         datosParaValidar
                 .all(s -> s != null && !s.isEmpty()) // verifica si todos los datos cumplen la condición, devuelve un Mono<Boolean>
                 .subscribe(System.out::println); //imprime true o false
+
+
 
     }
 
