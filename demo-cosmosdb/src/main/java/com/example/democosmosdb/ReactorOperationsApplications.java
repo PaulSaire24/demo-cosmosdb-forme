@@ -31,7 +31,7 @@ public class ReactorOperationsApplications implements CommandLineRunner {
                     System.out.println(s);
                     return nuevosDatos;
                 });
-                //.subscribe(dato -> System.out.println("Insertando: " + dato));
+                //subscribe(dato -> System.out.println("Insertando: " + dato));
 
         // Ejemplo de uso de thenMany
 
@@ -49,7 +49,7 @@ public class ReactorOperationsApplications implements CommandLineRunner {
         datos
                 .delayUntil(s -> tareaLarga)
                 .flatMap(s -> Mono.just(s)); // este aplana los monos a un Flux que es el Flux original de datos
-                //subscribe(System.out::println);
+                //.subscribe(System.out::println);
 
         datos
                 .delayUntil(s -> tareaLarga)
@@ -65,19 +65,19 @@ public class ReactorOperationsApplications implements CommandLineRunner {
         Flux<String> datosConValidacion = Flux.just("Dato7", "Dato8", "Dato9", "");
         datosConValidacion
                 .filter(s -> !s.isEmpty() && s != null);
-                        //.subscribe(System.out::println); //imprime los mismo que abajo
+                        //.subscribe(System.out::println); //imprime los mismo que abajo que son cada elemento de flux porque todos cumplen
 
         datosConValidacion
-                .filterWhen(this::valdateData);
-                //.subscribe(System.out::println); //imprime los mismo que arriba
+                .filterWhen(this::valdateData)
+                .subscribe(System.out::println); //imprime los mismo que arriba que son cada elemento de flux porque todos cumplen
 
         // uso del .all
 
         Flux<String> datosParaValidar = Flux.just("Dato10", "", "Dato12");
 
         datosParaValidar
-                .all(s -> s != null && !s.isEmpty()) // verifica si todos los datos cumplen la condición, devuelve un Mono<Boolean>
-                .subscribe(System.out::println); //imprime true o false
+                .all(s -> s != null && !s.isEmpty()); // verifica si todos los datos cumplen la condición, devuelve un Mono<Boolean>
+                //.subscribe(System.out::println); //imprime true o false
 
 
 

@@ -3,6 +3,7 @@ package com.example.democosmosdb.functionalprogramming;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class ExercisesFunctional {
@@ -55,5 +56,6 @@ public class ExercisesFunctional {
 
         Float averageDeveloperSalary = totalDeveloperSalaries / numberOfDevelopers;
         System.out.println(averageDeveloperSalary);
+
     }
 }
