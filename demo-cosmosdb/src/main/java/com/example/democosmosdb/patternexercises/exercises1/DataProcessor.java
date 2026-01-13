@@ -1,5 +1,6 @@
 package com.example.democosmosdb.patternexercises.exercises1;
 
+
 import java.util.List;
 
 public class DataProcessor {
