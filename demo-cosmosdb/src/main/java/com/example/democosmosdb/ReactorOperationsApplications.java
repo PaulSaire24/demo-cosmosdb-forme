@@ -68,8 +68,8 @@ public class ReactorOperationsApplications implements CommandLineRunner {
                         //.subscribe(System.out::println); //imprime los mismo que abajo que son cada elemento de flux porque todos cumplen
 
         datosConValidacion
-                .filterWhen(this::valdateData)
-                .subscribe(System.out::println); //imprime los mismo que arriba que son cada elemento de flux porque todos cumplen
+                .filterWhen(this::valdateData);
+                //.subscribe(System.out::println); //imprime los mismo que arriba que son cada elemento de flux porque todos cumplen
 
         // uso del .all
 
