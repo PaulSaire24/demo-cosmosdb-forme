@@ -38,7 +38,7 @@ public class ReactorOperationsApplications implements CommandLineRunner {
         Flux<String> datosExistentes = Flux.just("Dato3", "Dato4");
         Mono<String> restaurarDatos = Mono.just("Restaurando datos...");
         restaurarDatos
-                .thenMany(datosExistentes); // thenMany se usa para ignorar el resultado de restaurarDatos obviando lo que emite y continuar con datosExistentes
+                .thenMany(datosExistentes); // thenMany se usa para ignorar el resultado de restaurarDatos obviando lo que emite y continuar con datosExistentes, pero te devuelve un flux
                 //subscribe(System.out::println);
 
         // Ejemplo de uso de delayUntil
@@ -79,11 +79,9 @@ public class ReactorOperationsApplications implements CommandLineRunner {
                 .all(s -> s != null && !s.isEmpty()); // verifica si todos los datos cumplen la condición, devuelve un Mono<Boolean>
                 //.subscribe(System.out::println); //imprime true o false
 
-
-
     }
 
     public Mono<Boolean> valdateData(String data) {
-        return Mono.just(data != null && !data.isEmpty());
-    }
+        return Mono.just(data != null && !data.isEmpty()); //ojo si esta validacion es asi noma no es necesario envolverlo en un Mono<Boolean>
+    }// solo te devolveria un Mono<Boolean> si viene de una api externa, o es una validacion de db, donde hay Entra/Salida de datos
 }
