@@ -10,7 +10,7 @@ public class ListExamples {
         //importa la posicion y permite elementos duplicdos
 
         //arraylist:
-        // los arraylist son rapido para consulta (for, forEach,etc) pero lento con las inserciones
+        // los arraylist son rapido para leer (ojo leer por posicion, osea por indice) datos rápidamente(for, forEach,etc) pero lento con las inserciones
         List<String> names = new ArrayList<>();
         names.add("Paul");
         names.add("Paul");
@@ -24,15 +24,13 @@ public class ListExamples {
             }
         } // este seria eliminar con un for
 
-        //List<String> newNames = names.stream().filter(p -> !"Juana".equals(p)).toList(); //este seria la forma de eliminar con stream
-
-
-        //System.out.println(names);
+//        List<String> newNames = names.stream().filter(p -> !"Juana".equals(p)).toList(); //este seria la forma de eliminar con stream
+//        System.out.println(newNames);
 
 
 
         //LinkedList:
-        //muy rapido para eliminar y guardar elementos, lento en las consultas, usan punteros internamente
+        //muy rapido para eliminar y guardar elementos, lento para buscar un dato en especifico, usan punteros internamente
         LinkedList<String> namesLinked = new LinkedList<>();
 
         namesLinked.add("Juan");

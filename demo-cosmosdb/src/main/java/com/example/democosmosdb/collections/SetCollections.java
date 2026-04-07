@@ -8,9 +8,9 @@ public class SetCollections {
 
     public static void main(String[] args) {
     //los List es como una cola donde el orden importa
-    // los Set es un club exclusivo donde no se permite duplicados (principal caracteristica) y donde no importa el orden de llegada
+    //los Set es un club exclusivo donde no se permite duplicados (principal caracteristica) y donde no importa el orden de llegada
 
-        //HashSet muy rapido para guardar eliminar y consultar
+        //HashSet muy rapido para insertar, eliminar y buscar (ojo: rapido para buscar por contenido, si existe este elemento en la lista)
         Set<String> club =  new HashSet<>();
 
         club.add("Carlos");
@@ -43,7 +43,7 @@ public class SetCollections {
         nums.add(30);
 
         System.out.println(nums.size());
-        System.out.println(nums); //veras que imprime en orden numero de menor a mayor
+        System.out.println(nums); //veras que imprime desorden porque es un HashSet()
 
     }
 }

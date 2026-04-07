@@ -15,6 +15,7 @@ public class TypeMaps {
         //mas rapido
         //laves unicas (key)
         //si puede haber valores repetidos (value)
+        //ideal para guardar y recuperar datos rapidamente usando una llave
         Map<String,Double> carrito = new HashMap<>();
         carrito.put("Manzanas", 2.50);
         carrito.put("Pan", 1.20);
