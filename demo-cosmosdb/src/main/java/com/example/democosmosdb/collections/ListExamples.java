@@ -10,7 +10,7 @@ public class ListExamples {
         //importa la posicion y permite elementos duplicdos
 
         //arraylist:
-        // los arraylist son rapido para leer (ojo leer por posicion, osea por indice) datos rápidamente(for, forEach,etc) pero lento con las inserciones
+        // los arraylist son rapido para leer (ojo leer por posicion, osea por indice) datos rápidamente(for, forEach,etc) pero lento con las inserciones y eliminaciones
         List<String> names = new ArrayList<>();
         names.add("Paul");
         names.add("Paul");

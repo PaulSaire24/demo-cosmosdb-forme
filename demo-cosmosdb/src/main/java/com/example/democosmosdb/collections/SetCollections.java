@@ -21,7 +21,7 @@ public class SetCollections {
         //System.out.println(club); //veras que imprime desordenado
 
         //TreeSet este ordena la collections ya se orden alfabetico o numero o uno personalizado
-        //es mad lento que el hashSet porque tiene que acomodar todo en cada agregacion
+        //es mas lento que el hashSet porque tiene que acomodar todo en cada agregacion
 
         Set<String> gues =  new TreeSet<>();
         gues.add("pedro");

@@ -42,10 +42,8 @@ public class ExercisesCollections {
         club.add(p1);
         club.add(p2);
 
-        System.out.println(club.size());// en teoria no deberia agregar el p2 ya que son lo mismo pero sin el EqualAndHashCode si lo agrega ya que compara instancias en moeria
+        System.out.println(club.size());// en teoria no deberia agregar el p2 ya que son lo mismo pero sin el EqualAndHashCode si lo agrega ya que compara instancias en memoria
         //agregando @EqualsAndHashCode veras que solo agregar una persona (p1)
-
-
 
 
         // ahora veremos como pasamos de O(n2) a O(n)
@@ -53,11 +51,17 @@ public class ExercisesCollections {
         int[] lists = new int[]{1,2,3,10,5};
         System.out.println(sumaTenTrue(lists));
 
-
+        //tienes un cojuntos de IDs, determinar si hay IDs duplicados
+        int[] ids = new int[]{1,2,3,10,5,20,30,45,4,89,-9};
+        System.out.println("yes or no?: "+ thereAreDuplicateIDs(ids));
 
         // Dada una cadena de texto (por ejemplo: "google"), debes encontrar el primer carácter que no se repite en todo el string.
         System.out.println(notRepit("vivido"));
 
+        //int[] unorderedList = new int[]{5,1,3,4,7,9,6,8,14,35,68,11};
+        List<Integer> unorderedList = List.of(5,1,3,4,7,9,6,8,14,35,68,11);
+        List<Integer> nl = unorderedList.stream().sorted().toList();
+        System.out.println(nl);
     }
 
     private static Boolean sumaTenTrue(int [] nums) {
@@ -83,5 +87,16 @@ public class ExercisesCollections {
             }
         }
         return '_';
+    }
+
+    private static boolean thereAreDuplicateIDs(int[] ids) {
+        Set<Integer> idsClean = new HashSet<>();
+        for (int n : ids){
+            if (idsClean.contains(n)){
+                return true;
+            }
+            idsClean.add(n);
+        }
+        return false;
     }
 }
